@@ -2,12 +2,27 @@
 
 //sort
 const harfler =["a","b","n","l","k","p", 1, 3, 5, 0];
+
 const numbers = [400.50, 3000, 99.99, 35.99, 12.00, 9500];
 
 console.log(harfler.sort());
 let sortedNumber= numbers.sort((a,b)=>a-b);
 
 console.log(sortedNumber);
+
+//shift
+console.log("shift:", numbers.shift());
+
+//pop
+
+console.log("pop:", numbers.pop());
+
+//push (array lenght)
+
+console.log("push:", numbers.push("a"));
+console.log(sortedNumber);
+
+
 //include
 
 console.log(harfler.includes(1));
@@ -16,7 +31,6 @@ console.log(harfler.includes(1));
 //filter
 const words = ["dog", 'dig', 'log', 'baaag', 'wag'];
 // console.log(words.filter(item=>item.includes("d")));
-
 
 //some 
 //returns boolean 
@@ -62,21 +76,54 @@ const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64];
 //   return max;
 // });
 
+
 const MaxValue= grades.reduce((max, curretVal)=>Math.max(max,curretVal));
 
 console.log(`MaxValue: `, MaxValue);
 
 
-// //reducer3
 
-// const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
+
+//reducer3
+
+const votes = ['y', 'y', "kararsiz", 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
+ 
+// sonuc ={
+//   y: 6;
+//   n: 80;
+// }
+
 
 // const result= votes.reduce((sonuc, currentValue)=>{
-//   ...
+//   if (sonuc[currentValue]) {sonuc[currentValue]++
+//    }else{
+//     sonuc[currentValue]=1
+//    }
 //   return sonuc;
-// }
+// },{}
 // )
 
+const result= votes.reduce((sonuc, currentValue)=>{
+  sonuc[currentValue] = (sonuc[currentValue] || 0 ) +1;
+  return sonuc;
+},{}
+)
 
-// //find
+
+console.log("results:", result);
+
+//find
+
+let movies = [
+  "The Fantastic Mr. Fox",
+  "Mr. and Mrs. Smith",
+  "Mrs. Doubtfire",
+  "Mr. Deeds"
+]
+
+console.log(`find: `, 
+  movies.find(
+    movie => movie.includes("oo")
+  )
+)
 
